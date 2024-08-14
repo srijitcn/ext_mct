@@ -18,4 +18,4 @@ command: |
 
 compute:
   gpus: 8
-  cluster: r7z22p1
+  cluster: r8z11
