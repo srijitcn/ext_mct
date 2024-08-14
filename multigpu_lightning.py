@@ -53,7 +53,6 @@ training_args = TrainingArguments(
     output_dir="test_trainer",
     eval_strategy="epoch",
     do_train=True,
-    half_precision_backend="cpu_amp",
     gradient_checkpointing=True,
     gradient_checkpointing_kwargs={"use_reentrant": False},
 )
@@ -68,6 +67,7 @@ trainer = pl.Trainer(
     accelerator='gpu', 
     devices=8, 
     num_nodes=1,
+    strategy="ddp",
     model=model,
     args=training_args,
     train_dataset=small_train_dataset,
@@ -75,5 +75,4 @@ trainer = pl.Trainer(
     compute_metrics=compute_metrics,
 )
 
-with torch.cuda.amp.autocast():
-    trainer.train()
+trainer.train()
