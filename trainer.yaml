@@ -1,5 +1,6 @@
 name: multi-gpu-test
-image: mosaicml/pytorch:2.2.2_cu121-python3.11-ubuntu20.04
+#image: mosaicml/pytorch:2.2.2_cu121-python3.11-ubuntu20.04
+image: mosaicml/pytorch:1.13.1_cu117-python3.10-ubuntu20.04
 
 integrations:
 - integration_type: git_repo
