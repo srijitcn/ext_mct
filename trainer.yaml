@@ -15,10 +15,10 @@ command: |
   export LOCAL_WORLD_SIZE=1
   export RANK=0
   export LOCAL_RANK=0
-  
+
   pip install torch transformers accelerate evaluate scikit-learn mlflow
   python multigpu.py
 
 compute:
-  gpus: 16
+  gpus: 8
   cluster: r8z11
