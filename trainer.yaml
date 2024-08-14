@@ -9,6 +9,8 @@ integrations:
 
 command: |
   cd ext_mct
+  echo $MASTER_ADDR
+  echo $MASTER_PORT
   pip install torch transformers accelerate evaluate scikit-learn mlflow
   python multigpu.py
 
