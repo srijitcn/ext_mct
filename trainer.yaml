@@ -1,0 +1,13 @@
+name: multi-gpu-test
+image: mosaicml/pytorch:2.2.2_cu121-python3.11-ubuntu20.04
+command: |
+  #git clone https://${GITHUB_USERNAME}:${PAT}@github.com/merck-gen/dags-aiml-platform-mosaic-assess-squad-1.git
+  #cd dags-aiml-platform-mosaic-assess-squad-1
+  #git checkout dev-james-0
+  #cd dags_aiml_platform_mosaic_assess_squad_1/multi_gpu_test/
+  pip install torch transformers accelerate evaluate scikit-learn mlflow
+  python multi_gpu.py
+
+compute:
+  gpus: 8
+  cluster: r7z22p1
