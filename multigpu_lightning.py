@@ -67,7 +67,7 @@ with open("simple_training_args.json", "w") as f:
 trainer = pl.Trainer(
     accelerator='gpu', 
     devices=8, 
-    num_nodes=1
+    num_nodes=1,
     model=model,
     args=training_args,
     train_dataset=small_train_dataset,
