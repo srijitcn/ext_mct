@@ -9,7 +9,7 @@ integrations:
 
 command: |
   cd ext_mct
-  pip install torch transformers accelerate evaluate scikit-learn mlflow pytorch-lightning
+  pip install torch transformers accelerate evaluate scikit-learn mlflow
   
   export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
   torchrun --nproc_per_node 8 multigpu.py
