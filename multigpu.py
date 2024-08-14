@@ -52,9 +52,9 @@ training_args = TrainingArguments(
     output_dir="test_trainer",
     eval_strategy="epoch",
     do_train=True,
-    #half_precision_backend="cpu_amp",
-    gradient_checkpointing=True,
-    gradient_checkpointing_kwargs={"use_reentrant": False},
+    half_precision_backend="cpu_amp",
+    #gradient_checkpointing=True,
+    #gradient_checkpointing_kwargs={"use_reentrant": False},
 )
 
 # print('-------TRAINING ARGS--------')
@@ -71,4 +71,5 @@ trainer = Trainer(
     compute_metrics=compute_metrics,
 )
 
-trainer.train()
+with torch.cuda.amp.autocast():
+    trainer.train()
