@@ -1,6 +1,5 @@
 name: multi-gpu-test
-#image: mosaicml/pytorch:2.2.2_cu121-python3.11-ubuntu20.04
-image: mosaicml/pytorch:1.13.1_cu117-python3.10-ubuntu20.04
+image: mosaicml/pytorch:2.2.2_cu121-python3.11-ubuntu20.04
 
 integrations:
 - integration_type: git_repo
@@ -13,7 +12,9 @@ command: |
   export MASTER_ADDR=127.0.0.0
   export MASTER_PORT=12355
   pip install torch transformers accelerate evaluate scikit-learn mlflow
-  python multigpu.py
+  
+  export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+  torch run --nproc_per_node 8 multigpu.py
 
 compute:
   gpus: 8
