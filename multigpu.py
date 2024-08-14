@@ -40,8 +40,6 @@ model = AutoModelForSequenceClassification.from_pretrained(
 )
 
 model.to("cuda")
-small_train_dataset.to("cuda")
-small_eval_dataset.to("cuda")
 
 metric = evaluate.load("accuracy")
 
