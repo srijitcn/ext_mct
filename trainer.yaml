@@ -9,10 +9,8 @@ integrations:
 
 command: |
   cd ext_mct
-  pwd
-  ls -al
   pip install torch transformers accelerate evaluate scikit-learn mlflow
-  python multi_gpu.py
+  python multigpu.py
 
 compute:
   gpus: 8
