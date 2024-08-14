@@ -10,8 +10,12 @@ integrations:
 
 command: |
   cd ext_mct
-  echo "MASTER_ADDR:$MASTER_ADDR"
-  echo "MASTER_PORT:$MASTER_PORT"  
+  export NODE_RANK=0
+  export WORLD_SIZE=1
+  export LOCAL_WORLD_SIZE=1
+  export RANK=0
+  export LOCAL_RANK=0
+  
   pip install torch transformers accelerate evaluate scikit-learn mlflow
   python multigpu.py
 
