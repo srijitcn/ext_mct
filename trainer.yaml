@@ -10,7 +10,8 @@ integrations:
 
 command: |
   cd ext_mct
-  pip install torch transformers accelerate evaluate scikit-learn mlflow
+  
+  pip install -r requirements.txt
   
   export MASTER_ADDR=127.0.0.1
   export MASTER_PORT=22366
@@ -18,7 +19,6 @@ command: |
   #torchrun --nproc_per_node 8 multigpu.py
   #python ddp.py 50 10
   python multigpu.py 
-
   #composer -n 8 multigpu.py
 
 compute:
