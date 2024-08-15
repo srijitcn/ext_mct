@@ -30,8 +30,8 @@ def tokenize_function(examples):
 
 
 tokenized_datasets = dataset.map(tokenize_function, batched=True)
-small_train_dataset = tokenized_datasets["train"].shuffle(seed=42).select(range(100))
-small_eval_dataset = tokenized_datasets["test"].shuffle(seed=42).select(range(100))
+small_train_dataset = tokenized_datasets["train"].shuffle(seed=42).select(range(10))
+small_eval_dataset = tokenized_datasets["test"].shuffle(seed=42).select(range(10))
 
 
 # Load and train the model
