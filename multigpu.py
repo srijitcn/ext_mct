@@ -38,6 +38,8 @@ model = AutoModelForSequenceClassification.from_pretrained(
     num_labels=5,
 )
 
+model.to("cuda:0")
+
 metric = evaluate.load("accuracy")
 
 
