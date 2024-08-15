@@ -20,7 +20,7 @@ from torch.distributed import init_process_group, destroy_process_group
 #################################################################################
 
 
-init_process_group(backend="nccl", rank=0, world_size=world_size)
+init_process_group(backend="nccl", rank=0, world_size=8)
 torch.cuda.set_device(0)
 
 # Load data
