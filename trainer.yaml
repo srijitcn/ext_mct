@@ -10,7 +10,7 @@ integrations:
 
 command: |
   cd ext_mct
-  pip install torch transformers accelerate evaluate scikit-learn mlflow
+  pip install torch transformers accelerate evaluate scikit-learn mlflow mosaicml==0.23.5
   
   export MASTER_ADDR="localhost"
   export MASTER_PORT=12366
