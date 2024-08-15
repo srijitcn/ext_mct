@@ -20,9 +20,6 @@ from torch.distributed import init_process_group, destroy_process_group
 #################################################################################
 
 
-init_process_group(backend="nccl", rank=0, world_size=8)
-torch.cuda.set_device(0)
-
 # Load data
 dataset = load_dataset("yelp_review_full")
 tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
