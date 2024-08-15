@@ -8,6 +8,7 @@ from transformers import (
     Trainer,
     TrainingArguments,
 )
+from torch.distributed import init_process_group, destroy_process_group
 
 #################################################################################
 #   This script validates multi-GPU training.
@@ -17,6 +18,10 @@ from transformers import (
 #   If your cuda installation was successful, you should see all GPUs on your
 #   instance being utilized. More importantly, this script should complete in ~1 minute
 #################################################################################
+
+
+init_process_group(backend="nccl", rank=0, world_size=world_size)
+torch.cuda.set_device(0)
 
 # Load data
 dataset = load_dataset("yelp_review_full")
