@@ -22,7 +22,6 @@ from transformers import (
 dataset = load_dataset("yelp_review_full")
 tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
 
-
 # Tokenize and split
 def tokenize_function(examples):
     return tokenizer(examples["text"], padding="max_length", truncation=True)
