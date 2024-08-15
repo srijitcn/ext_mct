@@ -40,7 +40,6 @@ model = AutoModelForSequenceClassification.from_pretrained(
     num_labels=5,
 )
 
-model.to("cuda")
 
 metric = evaluate.load("accuracy")
 
