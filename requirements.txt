@@ -10,5 +10,4 @@ triton
 mlflow
 evaluate
 accelerate
-deepspeed
 
