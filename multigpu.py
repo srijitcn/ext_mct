@@ -67,6 +67,7 @@ with open("simple_training_args.json", "w") as f:
 
 trainer = Trainer(
     model=model,
+    ddp_backend="nccl",
     args=training_args,
     train_dataset=small_train_dataset,
     eval_dataset=small_eval_dataset,
