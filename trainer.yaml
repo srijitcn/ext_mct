@@ -14,6 +14,7 @@ command: |
   
   export MASTER_ADDR=127.0.0.1
   export MASTER_PORT=22366
+  export WORLD_SIZE=8
   #export OMP_NUM_THREADS=8
   #export NCCL_IB_GID_INDEX=3
   #export NCCL_P2P_DISABLE=1
