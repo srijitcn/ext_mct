@@ -10,6 +10,5 @@ triton
 mlflow
 evaluate
 accelerate
-nvidia-pyindex
-nvidia-cublas
+
 
